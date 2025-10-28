@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bq0eu4ihy7sci"]
+[gd_scene load_steps=4 format=3 uid="uid://bq0eu4ihy7sci"]
 
 [ext_resource type="Script" uid="uid://qyr20otdp524" path="res://scripts/main.gd" id="1_o5qli"]
 
@@ -7,12 +7,6 @@ size = Vector2(1152, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]
 size = Vector2(1152, 19.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sugp2"]
-size = Vector2(20, 648)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
-size = Vector2(20, 648)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_o5qli")
@@ -28,15 +22,3 @@ shape = SubResource("RectangleShape2D_o5qli")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom"]
 position = Vector2(576, 657.25)
 shape = SubResource("RectangleShape2D_0wfyh")
-
-[node name="Right" type="Area2D" parent="." groups=["walls"]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
-position = Vector2(-10, 324)
-shape = SubResource("RectangleShape2D_sugp2")
-
-[node name="Left" type="Area2D" parent="." groups=["walls"]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
-position = Vector2(1162, 324)
-shape = SubResource("RectangleShape2D_jyhfs")
