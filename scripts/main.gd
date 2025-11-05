@@ -24,4 +24,3 @@ func add_opponent_to_scene():
 	opponent.position.y = get_viewport_rect().size.y / 2
 	opponent.position.x = screen_size.x - 30
 	add_child(opponent)
-	

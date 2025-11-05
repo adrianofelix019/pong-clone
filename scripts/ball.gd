@@ -8,6 +8,7 @@ var direction: Vector2
 @onready var radius = $CollisionShape2D.shape.radius
 var screen_size: Vector2
 
+
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
 	position = get_viewport_rect().size / 2
