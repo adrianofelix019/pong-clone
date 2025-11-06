@@ -42,3 +42,4 @@ func increase_speed() -> void:
 
 func _on_body_entered(_body: Node2D) -> void:
 	direction.x = -direction.x
+	increase_speed()
