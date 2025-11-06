@@ -5,4 +5,4 @@ Todo:
 - [x] Make the opponent move towards the ball
 - [ ] Add score
 - [ ] Fix opponent movimentation
-- [ ] Reset ball speed when score
+- [x] Reset ball speed when score

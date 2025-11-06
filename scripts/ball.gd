@@ -2,7 +2,7 @@ extends Area2D
 
 
 var speed := 200.0
-var speed_increase := 50.0
+var speed_increase := 70.0
 var max_speed := 800.0
 var direction: Vector2
 @onready var radius = $CollisionShape2D.shape.radius
@@ -28,6 +28,7 @@ func is_ball_off_the_screen():
 	var x_offset = position.x + 15
 	if x_offset < 0 or x_offset > screen_size.x:
 		position = get_viewport_rect().size / 2
+		speed = 200
 		direction = random_direction()
 
 
@@ -36,7 +37,7 @@ func random_direction() -> Vector2:
 
 
 func increase_speed() -> void:
-	speed = min(speed + speed_increase, max_speed)
+	speed = speed + speed_increase
 
 
 func _on_body_entered(_body: Node2D) -> void:
