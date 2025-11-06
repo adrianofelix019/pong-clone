@@ -1,6 +1,10 @@
 extends Area2D
 
 
+signal player_scored
+signal opponent_scored
+
+
 var speed := 200.0
 var speed_increase := 70.0
 var max_speed := 800.0
@@ -25,11 +29,21 @@ func _physics_process(delta):
 
 
 func is_ball_off_the_screen():
-	var x_offset = position.x + 15
-	if x_offset < 0 or x_offset > screen_size.x:
-		position = get_viewport_rect().size / 2
-		speed = 200
-		direction = random_direction()
+	var x_offset = position.x + radius * 2
+	var is_ball_off_screen = x_offset < 0 or x_offset > screen_size.x
+	if is_ball_off_screen:
+		reset_ball_position()
+	
+	if x_offset < 0:
+		emit_signal("opponent_scored")
+	if x_offset > screen_size.x:
+		emit_signal("player_scored")
+
+
+func reset_ball_position():
+	position = get_viewport_rect().size / 2
+	speed = 200
+	direction = random_direction()
 
 
 func random_direction() -> Vector2:

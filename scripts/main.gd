@@ -1,9 +1,15 @@
 extends Node2D
 
 
+var player_score := 0
+var opponent_score := 0
+
+
 func _ready() -> void:
 	var ball_scene = preload("res://scenes/ball.tscn")
 	var ball = ball_scene.instantiate()
+	ball.connect("player_scored", _on_player_scored)
+	ball.connect("opponent_scored", _on_opponent_scored)
 	add_child(ball)
 	add_player_to_scene()
 	add_opponent_to_scene()
@@ -24,3 +30,13 @@ func add_opponent_to_scene():
 	opponent.position.y = get_viewport_rect().size.y / 2
 	opponent.position.x = screen_size.x - 30
 	add_child(opponent)
+
+
+func _on_player_scored():
+	player_score += 1
+	$CanvasLayer/Label.text = "%d : %d" % [player_score, opponent_score]
+
+
+func _on_opponent_scored():
+	opponent_score += 1
+	$CanvasLayer/Label.text = "%d : %d" % [player_score, opponent_score]
