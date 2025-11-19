@@ -56,4 +56,11 @@ func increase_speed() -> void:
 
 func _on_body_entered(_body: Node2D) -> void:
 	direction.x = -direction.x
+	var paddle = get_parent().get_node("Player")
+	var paddle_height = paddle.get_node("CollisionShape2D").shape.extents.y * 2.0
+	var relative_y = (position.y - paddle.position.y) / (paddle_height / 2.0)
+	relative_y = clamp(relative_y, -1, 1)
+	direction.y = relative_y * 0.75  
+	direction.y += paddle.velocity.y * 0.002
+	direction = direction.normalized()
 	increase_speed()
