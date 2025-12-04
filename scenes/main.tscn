@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bq0eu4ihy7sci"]
+[gd_scene load_steps=3 format=3 uid="uid://bq0eu4ihy7sci"]
 
 [ext_resource type="Script" uid="uid://qyr20otdp524" path="res://scripts/main.gd" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://btte4xx7ogiih" path="res://scripts/pause_controller.gd" id="2_0wfyh"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_o5qli")
@@ -28,3 +29,6 @@ size_flags_vertical = 0
 theme_override_font_sizes/font_size = 48
 text = "0 : 0"
 horizontal_alignment = 1
+
+[node name="PauseController" type="Node2D" parent="."]
+script = ExtResource("2_0wfyh")
