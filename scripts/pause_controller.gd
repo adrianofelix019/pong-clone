@@ -6,6 +6,5 @@ func _ready():
 
 func _input(event: InputEvent):
 	if event.is_action_pressed("pause"):
-		print("The paused state is", get_tree().paused)
 		$"../CanvasLayer/PauseLabel".visible = !get_tree().paused
 		get_tree().paused = !get_tree().paused
