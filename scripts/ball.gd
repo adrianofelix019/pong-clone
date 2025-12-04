@@ -6,7 +6,7 @@ signal opponent_scored
 
 
 var speed := 200.0
-var speed_increase := 70.0
+var speed_increase := 50.0
 var max_speed := 800.0
 var direction: Vector2
 @onready var radius = $CollisionShape2D.shape.radius

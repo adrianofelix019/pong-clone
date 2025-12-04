@@ -15,6 +15,11 @@ func _ready() -> void:
 	add_opponent_to_scene()
 
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause"):
+		get_tree().paused = not get_tree().paused
+
+
 func add_player_to_scene():
 	var player_scene = preload("res://scenes/player.tscn")
 	var player = player_scene.instantiate()
