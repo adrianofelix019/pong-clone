@@ -5,4 +5,6 @@ Todo:
 - [x] Make the opponent move towards the ball
 - [x] Add score
 - [x] Reset ball speed when score
-- [ ] Add UI
+- [X] Add UI
+- [ ] Add P1 vs P2
+---

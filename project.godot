@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="pong-clone"
-run/main_scene="uid://bq0eu4ihy7sci"
+run/main_scene="uid://8nhmi65gbgvr"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
