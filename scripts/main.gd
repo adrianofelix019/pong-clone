@@ -3,6 +3,7 @@ extends Node2D
 
 var player_score := 0
 var opponent_score := 0
+var is_pvp: bool
 
 
 func _ready() -> void:

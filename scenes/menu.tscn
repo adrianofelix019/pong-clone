@@ -56,4 +56,5 @@ text = "Sair
 "
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/CPU" to="." method="_on_cpu_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/PVP" to="." method="_on_pvp_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Sair" to="." method="_on_sair_pressed"]

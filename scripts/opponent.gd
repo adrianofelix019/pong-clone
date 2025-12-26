@@ -16,7 +16,18 @@ func _ready() -> void:
 
 
 func _physics_process(_delta):
-	move_towards_ball()
+	if GameConfig.game_mode == "CPU":
+		move_towards_ball()
+	elif GameConfig.game_mode == "PVP":
+		var direction := 0.0
+	
+		if Input.is_action_pressed("p2up") and is_not_on_ceil():
+			direction = -1.0
+		if Input.is_action_pressed("p2down") and is_not_on_floor():
+			direction = 1.0
+		
+		velocity.y = direction * speed
+		move_and_slide()
 
 
 func find_ball() -> void:
