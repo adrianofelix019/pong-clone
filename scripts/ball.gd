@@ -29,15 +29,15 @@ func _physics_process(delta):
 
 
 func is_ball_off_the_screen():
-	var x_offset = position.x + radius * 2
-	var is_ball_off_screen = x_offset < 0 or x_offset > screen_size.x
-	if is_ball_off_screen:
-		reset_ball_position()
+	var right_edge = position.x + radius
+	var left_edge = position.x - radius
 	
-	if x_offset < 0:
+	if right_edge < 0:
 		emit_signal("opponent_scored")
-	if x_offset > screen_size.x:
+		reset_ball_position()
+	elif left_edge > screen_size.x:
 		emit_signal("player_scored")
+		reset_ball_position()
 
 
 func reset_ball_position():
