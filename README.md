@@ -6,5 +6,5 @@ Todo:
 - [x] Add score
 - [x] Reset ball speed when score
 - [X] Add UI
-- [ ] Add P1 vs P2
+- [x] Add P1 vs P2
 ---
