@@ -7,4 +7,5 @@ Todo:
 - [x] Reset ball speed when score
 - [X] Add UI
 - [x] Add P1 vs P2
+- [ ] Add "Back to menu" button
 ---
