@@ -19,7 +19,7 @@ func _ready() -> void:
 	direction = random_direction()
 
 
-func _physics_process(delta):
+func _physics_process(delta) -> void:
 	position += direction * speed * delta
 
 	if position.y <= 0 or position.y >= screen_size.y:
@@ -28,7 +28,7 @@ func _physics_process(delta):
 	is_ball_off_the_screen()
 
 
-func is_ball_off_the_screen():
+func is_ball_off_the_screen() -> void:
 	var right_edge = position.x + radius
 	var left_edge = position.x - radius
 	
@@ -40,7 +40,7 @@ func is_ball_off_the_screen():
 		reset_ball_position()
 
 
-func reset_ball_position():
+func reset_ball_position() -> void:
 	position = get_viewport_rect().size / 2
 	speed = 200
 	direction = random_direction()
