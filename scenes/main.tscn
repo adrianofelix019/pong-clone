@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bq0eu4ihy7sci"]
+[gd_scene load_steps=4 format=3 uid="uid://bq0eu4ihy7sci"]
 
 [ext_resource type="Script" uid="uid://qyr20otdp524" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://btte4xx7ogiih" path="res://scripts/pause_controller.gd" id="2_0wfyh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0wfyh"]
+bg_color = Color(0.16862746, 0.16862746, 0.16862746, 0.7607843)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_o5qli")
@@ -28,7 +31,12 @@ theme_override_font_sizes/font_size = 48
 text = "0 : 0"
 horizontal_alignment = 1
 
-[node name="PauseLabel" type="Label" parent="CanvasLayer"]
+[node name="PauseLayer" type="CanvasLayer" parent="CanvasLayer"]
+layer = 10
+visible = false
+
+[node name="PauseLabel" type="Label" parent="CanvasLayer/PauseLayer"]
+z_index = 100
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -36,6 +44,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 78
+theme_override_styles/normal = SubResource("StyleBoxFlat_0wfyh")
 text = "Pausado"
 horizontal_alignment = 1
 vertical_alignment = 1

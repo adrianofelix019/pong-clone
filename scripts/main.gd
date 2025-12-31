@@ -14,7 +14,7 @@ func _ready() -> void:
 	add_child(ball)
 	add_player_to_scene()
 	add_opponent_to_scene()
-	$CanvasLayer/PauseLabel.visible = false
+	$CanvasLayer/PauseLayer.visible = false
 
 
 func add_player_to_scene():
