@@ -8,5 +8,5 @@ Todo:
 - [X] Add UI
 - [x] Add P1 vs P2
 - [x] Add "Back to menu" button
-What to do now?
+- [ ] Add a timer to start the match
 ---
