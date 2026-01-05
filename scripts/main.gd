@@ -21,7 +21,7 @@ func add_player_to_scene():
 	var player_scene = preload("res://scenes/player.tscn")
 	var player = player_scene.instantiate()
 	player.position.x = 30.0
-	player.position.y = get_viewport_rect().size.y / 2
+	player.position.y = get_viewport_rect().size.y / 2.0
 	add_child(player)
 
 
@@ -42,3 +42,8 @@ func _on_player_scored():
 func _on_opponent_scored():
 	opponent_score += 1
 	$CanvasLayer/Label.text = "%d : %d" % [player_score, opponent_score]
+
+
+func _on_back_to_menu_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/menu.tscn")

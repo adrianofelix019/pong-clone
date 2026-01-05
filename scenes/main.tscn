@@ -33,7 +33,6 @@ horizontal_alignment = 1
 
 [node name="PauseLayer" type="CanvasLayer" parent="CanvasLayer"]
 layer = 10
-visible = false
 
 [node name="PauseLabel" type="Label" parent="CanvasLayer/PauseLayer"]
 z_index = 100
@@ -49,5 +48,25 @@ text = "Pausado"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="BackToMenu" type="Button" parent="CanvasLayer/PauseLayer"]
+z_index = 100
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -175.0
+offset_top = -231.0
+offset_right = 175.0
+offset_bottom = -159.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 46
+text = "Voltar ao menu"
+
 [node name="PauseController" type="Node2D" parent="."]
 script = ExtResource("2_0wfyh")
+
+[connection signal="pressed" from="CanvasLayer/PauseLayer/BackToMenu" to="." method="_on_back_to_menu_pressed"]

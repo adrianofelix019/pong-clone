@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-@export var speed := 300.0
+@export var speed := 400.0
 var ball: Area2D
 const ERROR_MARGIN := 10.0
 var ceil_limit
