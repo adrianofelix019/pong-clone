@@ -64,3 +64,7 @@ func _on_body_entered(_body: Node2D) -> void:
 	direction.y += paddle.velocity.y * 0.002
 	direction = direction.normalized()
 	increase_speed()
+
+
+func freeze() -> void:
+	direction = Vector2.ZERO
